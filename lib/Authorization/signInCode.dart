@@ -1,11 +1,11 @@
-import 'package:diplom/signUpUsername.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 
-import 'eventsMain.dart';
+import '../Events/eventsMain.dart';
 
 class SignInCode extends StatefulWidget {
   const SignInCode({Key? key}) : super(key: key);

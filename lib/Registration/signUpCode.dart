@@ -1,5 +1,4 @@
-import 'package:diplom/eventsSettings.dart';
-import 'package:diplom/signUpUsername.dart';
+import 'package:diplom/Registration/signUpUsername.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,14 +6,14 @@ import 'signUpPhone.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 
-class verifyNumberPage extends StatefulWidget {
-  const verifyNumberPage({Key? key}) : super(key: key);
+class SignUpCode extends StatefulWidget {
+  const SignUpCode({Key? key}) : super(key: key);
 
   @override
-  State<verifyNumberPage> createState() => _verifyNumberState();
+  State<SignUpCode> createState() => _SignUpCodeState();
 }
 
-class _verifyNumberState extends State<verifyNumberPage> {
+class _SignUpCodeState extends State<SignUpCode> {
   var controller = TextEditingController();
 
   BoxDecoration get _pinPutDecoration {
@@ -34,21 +33,21 @@ class _verifyNumberState extends State<verifyNumberPage> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 32, left: 10),
+                padding: const EdgeInsets.only(top: 32),
                 child: Row(
                   children: [
                     IconButton(
-                      icon: Icon(Icons.arrow_back_ios),
+                      icon: Icon(Icons.arrow_back),
                       color: Color(0xFF8B41B9),
-                      iconSize: 22,
+                      iconSize: 26,
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
                     ),
                     Text(
-                      'Verify phone number',
+                      'Sign up',
                       style: GoogleFonts.manrope(
-                          fontSize: 21,
+                          fontSize: 34,
                           fontWeight: FontWeight.w800,
                           letterSpacing: -0.7),
                     ),
@@ -106,16 +105,16 @@ class _verifyNumberState extends State<verifyNumberPage> {
                                         },
                                         mainAxisSize: MainAxisSize.max,
                                         submittedFieldDecoration:
-                                        _pinPutDecoration.copyWith(
+                                            _pinPutDecoration.copyWith(
                                           borderRadius:
-                                          BorderRadius.circular(10.0),
+                                              BorderRadius.circular(10.0),
                                         ),
                                         selectedFieldDecoration:
-                                        _pinPutDecoration,
+                                            _pinPutDecoration,
                                         followingFieldDecoration:
-                                        _pinPutDecoration.copyWith(
+                                            _pinPutDecoration.copyWith(
                                           borderRadius:
-                                          BorderRadius.circular(10.0),
+                                              BorderRadius.circular(10.0),
                                           border: Border.all(
                                             color: Color(0xFF444444),
                                           ),
@@ -129,7 +128,7 @@ class _verifyNumberState extends State<verifyNumberPage> {
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(builder: (context) =>
-                                                eventsSettingsPage(),
+                                                SignUpUsername(),
                                             ));
                                       },
                                     ),

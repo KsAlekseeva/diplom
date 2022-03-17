@@ -1,19 +1,18 @@
-import 'package:diplom/signUpUsername.dart';
+import 'package:diplom/Settings/eventsSettings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'signUpPhone.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 
-class SignUpCode extends StatefulWidget {
-  const SignUpCode({Key? key}) : super(key: key);
+class verifyNumberPage extends StatefulWidget {
+  const verifyNumberPage({Key? key}) : super(key: key);
 
   @override
-  State<SignUpCode> createState() => _SignUpCodeState();
+  State<verifyNumberPage> createState() => _verifyNumberState();
 }
 
-class _SignUpCodeState extends State<SignUpCode> {
+class _verifyNumberState extends State<verifyNumberPage> {
   var controller = TextEditingController();
 
   BoxDecoration get _pinPutDecoration {
@@ -33,21 +32,21 @@ class _SignUpCodeState extends State<SignUpCode> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 32),
+                padding: const EdgeInsets.only(top: 32, left: 10),
                 child: Row(
                   children: [
                     IconButton(
-                      icon: Icon(Icons.arrow_back),
+                      icon: Icon(Icons.arrow_back_ios),
                       color: Color(0xFF8B41B9),
-                      iconSize: 26,
+                      iconSize: 22,
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
                     ),
                     Text(
-                      'Sign up',
+                      'Verify phone number',
                       style: GoogleFonts.manrope(
-                          fontSize: 34,
+                          fontSize: 21,
                           fontWeight: FontWeight.w800,
                           letterSpacing: -0.7),
                     ),
@@ -105,16 +104,16 @@ class _SignUpCodeState extends State<SignUpCode> {
                                         },
                                         mainAxisSize: MainAxisSize.max,
                                         submittedFieldDecoration:
-                                            _pinPutDecoration.copyWith(
+                                        _pinPutDecoration.copyWith(
                                           borderRadius:
-                                              BorderRadius.circular(10.0),
+                                          BorderRadius.circular(10.0),
                                         ),
                                         selectedFieldDecoration:
-                                            _pinPutDecoration,
+                                        _pinPutDecoration,
                                         followingFieldDecoration:
-                                            _pinPutDecoration.copyWith(
+                                        _pinPutDecoration.copyWith(
                                           borderRadius:
-                                              BorderRadius.circular(10.0),
+                                          BorderRadius.circular(10.0),
                                           border: Border.all(
                                             color: Color(0xFF444444),
                                           ),
@@ -128,7 +127,7 @@ class _SignUpCodeState extends State<SignUpCode> {
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(builder: (context) =>
-                                                SignUpUsername(),
+                                                eventsSettingsPage(),
                                             ));
                                       },
                                     ),

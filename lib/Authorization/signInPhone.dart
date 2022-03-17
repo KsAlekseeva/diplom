@@ -1,19 +1,18 @@
-import 'package:diplom/yourProfile.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:diplom/Authorization/signInCode.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-import 'eventsMain.dart';
-import 'signUpCode.dart';
+import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 
-class newUsernamePage extends StatefulWidget {
-  const newUsernamePage({Key? key}) : super(key: key);
+class SignInPhone extends StatefulWidget {
+  const SignInPhone({Key? key}) : super(key: key);
 
   @override
-  State<newUsernamePage> createState() => _newUsernameState();
+  State<SignInPhone> createState() => _SignInPhoneState();
 }
 
-class _newUsernameState extends State<newUsernamePage> {
+class _SignInPhoneState extends State<SignInPhone> {
   var controller = TextEditingController();
   bool _isDisabled = true;
 
@@ -25,21 +24,21 @@ class _newUsernameState extends State<newUsernamePage> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 32, left: 10),
+                padding: const EdgeInsets.only(top: 32),
                 child: Row(
                   children: [
                     IconButton(
-                      icon: Icon(Icons.arrow_back_ios),
+                      icon: Icon(Icons.arrow_back),
                       color: Color(0xFF8B41B9),
-                      iconSize: 22,
+                      iconSize: 26,
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
                     ),
                     Text(
-                      'New username',
+                      'Sign in',
                       style: GoogleFonts.manrope(
-                          fontSize: 21,
+                          fontSize: 34,
                           fontWeight: FontWeight.w800,
                           letterSpacing: -0.7),
                     ),
@@ -50,6 +49,20 @@ class _newUsernameState extends State<newUsernamePage> {
                 padding: const EdgeInsets.only(top: 24, left: 16, right: 16),
                 child: Column(
                   children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Phone number',
+                          textAlign: TextAlign.end,
+                          style: GoogleFonts.sourceSansPro(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: -0.3),
+                        ),
+                      ],
+                    ),
                     Row(
                       children: [
                         SizedBox(
@@ -63,22 +76,25 @@ class _newUsernameState extends State<newUsernamePage> {
                                   Flexible(
                                     child: CupertinoTextField(
                                       controller: controller,
-                                      placeholder: "Oksana Alekseeva",
-                                      keyboardType: TextInputType.name,
-                                      maxLength: 100,
+                                      placeholder: "Enter your phone number",
+                                      keyboardType: TextInputType.phone,
+                                      autocorrect: false,
+                                      maxLength: 18,
                                       suffixMode: OverlayVisibilityMode.editing,
                                       inputFormatters: <TextInputFormatter>[
-                                        FilteringTextInputFormatter.singleLineFormatter,
+                                        FilteringTextInputFormatter.digitsOnly,
+                                        NumberTextInputFormatter(),
                                       ],
                                       onChanged: (text) {
                                         setState((){
-                                          _isDisabled = text.length == 1;
+                                          _isDisabled = text.length != 18;
                                         });
                                       },
                                       suffix: CupertinoButton(
                                         padding: EdgeInsets.zero,
                                         onPressed: () {
                                           controller.clear();
+                                          _isDisabled = true;
                                         },
                                         child: const Icon(CupertinoIcons.clear,
                                             color: Colors.black),
@@ -98,9 +114,8 @@ class _newUsernameState extends State<newUsernamePage> {
                                     onPressed: _isDisabled ? null : () {
                                       Navigator.push(
                                           context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                yourProfilePage(),
+                                          MaterialPageRoute(builder: (context) =>
+                                              SignInCode(),
                                           ));
                                     },
                                   )
@@ -118,6 +133,56 @@ class _newUsernameState extends State<newUsernamePage> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class NumberTextInputFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+      TextEditingValue oldValue, TextEditingValue newValue) {
+    final newTextLength = newValue.text.length;
+    int selectionIndex = newValue.selection.end;
+    int usedSubstringIndex = 1;
+    final newTextBuffer = StringBuffer();
+
+    if (newTextLength >= 1) {
+      if (newValue.text.startsWith(RegExp(r'[1234567890]'))) {
+        newTextBuffer.write('+7');
+        if (newValue.selection.end >= 1) selectionIndex++;
+      }
+    }
+    if (newTextLength >= 2) {
+      if (newValue.text.startsWith(RegExp(r'[1234567890]'))) {
+        newTextBuffer.write(' (9');
+        newTextBuffer.write(newValue.text.substring(2, usedSubstringIndex = 2));
+        if (newValue.selection.end >= 1) selectionIndex += 2;
+      }
+    }
+    if (newTextLength >= 5) {
+      newTextBuffer.write(
+          newValue.text.substring(usedSubstringIndex, usedSubstringIndex = 4) +
+              ') ');
+      if (newValue.selection.end >= 4) selectionIndex += 2;
+    }
+    if (newTextLength >= 8) {
+      newTextBuffer.write(
+          newValue.text.substring(usedSubstringIndex, usedSubstringIndex = 7) +
+              '-');
+      if (newValue.selection.end >= 7) selectionIndex++;
+    }
+    if (newTextLength >= 10) {
+      newTextBuffer.write(
+          newValue.text.substring(usedSubstringIndex, usedSubstringIndex = 9) +
+              '-');
+      if (newValue.selection.end >= 9) selectionIndex++;
+    }
+    if (newTextLength > usedSubstringIndex)
+      newTextBuffer
+          .write(newValue.text.substring(usedSubstringIndex, newTextLength));
+    return TextEditingValue(
+      text: newTextBuffer.toString(),
+      selection: TextSelection.collapsed(offset: selectionIndex),
     );
   }
 }

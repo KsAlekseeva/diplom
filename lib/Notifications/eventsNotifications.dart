@@ -1,12 +1,12 @@
 import 'dart:ui';
-import 'package:diplom/eventsMain.dart';
-import 'package:diplom/eventsSettings.dart';
+import 'package:diplom/Events/eventsMain.dart';
+import 'package:diplom/Settings/eventsSettings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'eventsProfile.dart';
+import '../Profile/eventsProfile.dart';
 
 class eventsNotificationsPage extends StatefulWidget {
   const eventsNotificationsPage({Key? key}) : super(key: key);
@@ -16,14 +16,6 @@ class eventsNotificationsPage extends StatefulWidget {
 }
 
 class _eventsNotificationsState extends State<eventsNotificationsPage> {
-  var controller = TextEditingController();
-
-  BoxDecoration get _pinPutDecoration {
-    return BoxDecoration(
-      border: Border.all(color: Color(0xFF444444)),
-      borderRadius: BorderRadius.circular(10.0),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -1,21 +1,18 @@
-import 'package:diplom/signInCode.dart';
-import 'package:diplom/verifyNumber.dart';
+import 'package:diplom/Registration/signUpCode.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'eventsSettings.dart';
-
-class newNumberPage extends StatefulWidget {
-  const newNumberPage({Key? key}) : super(key: key);
+class SignUpPhone extends StatefulWidget {
+  const SignUpPhone({Key? key}) : super(key: key);
 
   @override
-  State<newNumberPage> createState() => _newNumberState();
+  State<SignUpPhone> createState() => _SignUpPhoneState();
 }
 
-class _newNumberState extends State<newNumberPage> {
+class _SignUpPhoneState extends State<SignUpPhone> {
   var controller = TextEditingController();
   bool _isDisabled = true;
 
@@ -27,21 +24,21 @@ class _newNumberState extends State<newNumberPage> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 32, left: 10),
+                padding: const EdgeInsets.only(top: 32),
                 child: Row(
                   children: [
                     IconButton(
-                      icon: Icon(Icons.arrow_back_ios),
+                      icon: Icon(Icons.arrow_back),
                       color: Color(0xFF8B41B9),
-                      iconSize: 22,
+                      iconSize: 26,
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
                     ),
                     Text(
-                      'New phone number',
+                      'Sign up',
                       style: GoogleFonts.manrope(
-                          fontSize: 21,
+                          fontSize: 34,
                           fontWeight: FontWeight.w800,
                           letterSpacing: -0.7),
                     ),
@@ -52,6 +49,20 @@ class _newNumberState extends State<newNumberPage> {
                 padding: const EdgeInsets.only(top: 24, left: 16, right: 16),
                 child: Column(
                   children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Phone number',
+                          textAlign: TextAlign.end,
+                          style: GoogleFonts.sourceSansPro(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: -0.3),
+                        ),
+                      ],
+                    ),
                     Row(
                       children: [
                         SizedBox(
@@ -65,7 +76,7 @@ class _newNumberState extends State<newNumberPage> {
                                   Flexible(
                                     child: CupertinoTextField(
                                       controller: controller,
-                                      placeholder: "+7 (911) 322-32-23",
+                                      placeholder: "Enter your phone number",
                                       keyboardType: TextInputType.phone,
                                       autocorrect: false,
                                       maxLength: 18,
@@ -103,7 +114,7 @@ class _newNumberState extends State<newNumberPage> {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(builder: (context) =>
-                                              verifyNumberPage(),
+                                              SignUpCode(),
                                           ));
                                     },
                                   )

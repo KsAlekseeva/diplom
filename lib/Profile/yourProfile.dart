@@ -1,9 +1,9 @@
 import 'dart:ui';
-import 'package:diplom/eventsMain.dart';
-import 'package:diplom/eventsNotifications.dart';
-import 'package:diplom/eventsProfile.dart';
-import 'package:diplom/eventsSettings.dart';
-import 'package:diplom/newUsername.dart';
+import 'package:diplom/Events/eventsMain.dart';
+import 'package:diplom/Notifications/eventsNotifications.dart';
+import 'package:diplom/Profile/eventsProfile.dart';
+import 'package:diplom/Settings/eventsSettings.dart';
+import 'package:diplom/Profile/newUsername.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,14 +17,6 @@ class yourProfilePage extends StatefulWidget {
 }
 
 class _yourProfileState extends State<yourProfilePage> {
-  var controller = TextEditingController();
-
-  BoxDecoration get _pinPutDecoration {
-    return BoxDecoration(
-      border: Border.all(color: Color(0xFF444444)),
-      borderRadius: BorderRadius.circular(10.0),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {

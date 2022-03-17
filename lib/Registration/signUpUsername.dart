@@ -1,18 +1,17 @@
-import 'package:diplom/signInCode.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'dart:ui';
+import 'package:diplom/Events/eventsMain.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignInPhone extends StatefulWidget {
-  const SignInPhone({Key? key}) : super(key: key);
+class SignUpUsername extends StatefulWidget {
+  const SignUpUsername({Key? key}) : super(key: key);
 
   @override
-  State<SignInPhone> createState() => _SignInPhoneState();
+  State<SignUpUsername> createState() => _SignUpUsernameState();
 }
 
-class _SignInPhoneState extends State<SignInPhone> {
+class _SignUpUsernameState extends State<SignUpUsername> {
   var controller = TextEditingController();
   bool _isDisabled = true;
 
@@ -36,7 +35,7 @@ class _SignInPhoneState extends State<SignInPhone> {
                       },
                     ),
                     Text(
-                      'Sign in',
+                      'Sign up',
                       style: GoogleFonts.manrope(
                           fontSize: 34,
                           fontWeight: FontWeight.w800,
@@ -53,7 +52,7 @@ class _SignInPhoneState extends State<SignInPhone> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          'Phone number',
+                          'Username',
                           textAlign: TextAlign.end,
                           style: GoogleFonts.sourceSansPro(
                               color: Colors.black,
@@ -76,25 +75,22 @@ class _SignInPhoneState extends State<SignInPhone> {
                                   Flexible(
                                     child: CupertinoTextField(
                                       controller: controller,
-                                      placeholder: "Enter your phone number",
-                                      keyboardType: TextInputType.phone,
-                                      autocorrect: false,
-                                      maxLength: 18,
+                                      placeholder: "Enter your username",
+                                      keyboardType: TextInputType.name,
+                                      maxLength: 100,
                                       suffixMode: OverlayVisibilityMode.editing,
                                       inputFormatters: <TextInputFormatter>[
-                                        FilteringTextInputFormatter.digitsOnly,
-                                        NumberTextInputFormatter(),
+                                        FilteringTextInputFormatter.singleLineFormatter,
                                       ],
                                       onChanged: (text) {
                                         setState((){
-                                          _isDisabled = text.length != 18;
+                                          _isDisabled = text.length == 1;
                                         });
                                       },
                                       suffix: CupertinoButton(
                                         padding: EdgeInsets.zero,
                                         onPressed: () {
                                           controller.clear();
-                                          _isDisabled = true;
                                         },
                                         child: const Icon(CupertinoIcons.clear,
                                             color: Colors.black),
@@ -115,7 +111,7 @@ class _SignInPhoneState extends State<SignInPhone> {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(builder: (context) =>
-                                              SignInCode(),
+                                              eventsMainPage(),
                                           ));
                                     },
                                   )
@@ -133,56 +129,6 @@ class _SignInPhoneState extends State<SignInPhone> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class NumberTextInputFormatter extends TextInputFormatter {
-  @override
-  TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue, TextEditingValue newValue) {
-    final newTextLength = newValue.text.length;
-    int selectionIndex = newValue.selection.end;
-    int usedSubstringIndex = 1;
-    final newTextBuffer = StringBuffer();
-
-    if (newTextLength >= 1) {
-      if (newValue.text.startsWith(RegExp(r'[1234567890]'))) {
-        newTextBuffer.write('+7');
-        if (newValue.selection.end >= 1) selectionIndex++;
-      }
-    }
-    if (newTextLength >= 2) {
-      if (newValue.text.startsWith(RegExp(r'[1234567890]'))) {
-        newTextBuffer.write(' (9');
-        newTextBuffer.write(newValue.text.substring(2, usedSubstringIndex = 2));
-        if (newValue.selection.end >= 1) selectionIndex += 2;
-      }
-    }
-    if (newTextLength >= 5) {
-      newTextBuffer.write(
-          newValue.text.substring(usedSubstringIndex, usedSubstringIndex = 4) +
-              ') ');
-      if (newValue.selection.end >= 4) selectionIndex += 2;
-    }
-    if (newTextLength >= 8) {
-      newTextBuffer.write(
-          newValue.text.substring(usedSubstringIndex, usedSubstringIndex = 7) +
-              '-');
-      if (newValue.selection.end >= 7) selectionIndex++;
-    }
-    if (newTextLength >= 10) {
-      newTextBuffer.write(
-          newValue.text.substring(usedSubstringIndex, usedSubstringIndex = 9) +
-              '-');
-      if (newValue.selection.end >= 9) selectionIndex++;
-    }
-    if (newTextLength > usedSubstringIndex)
-      newTextBuffer
-          .write(newValue.text.substring(usedSubstringIndex, newTextLength));
-    return TextEditingValue(
-      text: newTextBuffer.toString(),
-      selection: TextSelection.collapsed(offset: selectionIndex),
     );
   }
 }

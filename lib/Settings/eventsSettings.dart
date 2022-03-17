@@ -1,8 +1,8 @@
 import 'dart:ui';
-import 'package:diplom/eventsMain.dart';
-import 'package:diplom/eventsNotifications.dart';
-import 'package:diplom/eventsProfile.dart';
-import 'package:diplom/newNumber.dart';
+import 'package:diplom/Events/eventsMain.dart';
+import 'package:diplom/Notifications/eventsNotifications.dart';
+import 'package:diplom/Profile/eventsProfile.dart';
+import 'package:diplom/Settings/newNumber.dart';
 import 'package:diplom/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
@@ -17,15 +17,6 @@ class eventsSettingsPage extends StatefulWidget {
 }
 
 class _eventsSettingsState extends State<eventsSettingsPage> {
-  var controller = TextEditingController();
-
-  BoxDecoration get _pinPutDecoration {
-    return BoxDecoration(
-      border: Border.all(color: Color(0xFF444444)),
-      borderRadius: BorderRadius.circular(10.0),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

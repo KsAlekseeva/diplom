@@ -1,6 +1,6 @@
 import 'dart:ui';
-import 'package:diplom/signInPhone.dart';
-import 'signUpPhone.dart';
+import 'package:diplom/Authorization/signInPhone.dart';
+import 'Registration/signUpPhone.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:google_fonts/google_fonts.dart';
