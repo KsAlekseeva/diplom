@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:diplom/CreateEvent/newEvent.dart';
 import 'package:diplom/Events/eventsMain.dart';
 import 'package:diplom/Notifications/eventsNotifications.dart';
 import 'package:diplom/Settings/eventsSettings.dart';
@@ -34,7 +35,7 @@ class _eventsProfileState extends State<eventsProfilePage> {
                       height: 41,
                     ),
                     Text(
-                      'Profile',
+                      'Профиль',
                       style: GoogleFonts.manrope(
                           fontSize: 34,
                           fontWeight: FontWeight.w800,
@@ -138,7 +139,7 @@ class _eventsProfileState extends State<eventsProfilePage> {
                     Row(
                       children: [
                         Text(
-                          'Statistics',
+                          'Статистика',
                           style: GoogleFonts.manrope(
                               fontSize: 25,
                               fontWeight: FontWeight.w800,
@@ -150,7 +151,7 @@ class _eventsProfileState extends State<eventsProfilePage> {
                       padding: const EdgeInsets.only(top: 8),
                       child: Row(
                         children: [
-                          Text('• 10 successful meetings  \n• 5 friends envited to app', style: GoogleFonts.manrope(
+                          Text('• 10 успешных встреч  \n• 5 друзей приглашены в приложение', style: GoogleFonts.manrope(
                               fontSize: 18,
                               fontWeight: FontWeight.w600,
                               letterSpacing: -0.3,
@@ -184,7 +185,7 @@ class _eventsProfileState extends State<eventsProfilePage> {
                             ))
                       },
                       child: Text(
-                        'Log out',
+                        'Выход',
                         style: GoogleFonts.openSans(
                           fontSize: 17,
                           fontWeight: FontWeight.w600,
@@ -254,7 +255,14 @@ class _eventsProfileState extends State<eventsProfilePage> {
                                         ],
                                       )),
                                   child: IconButton(
-                                      onPressed: () => {},
+                                      onPressed: () => {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  newEventPage(),
+                                            ))
+                                      },
                                       icon: Icon(Icons.add),
                                       color: Colors.white),
                                 ),

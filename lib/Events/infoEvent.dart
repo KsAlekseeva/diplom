@@ -48,7 +48,7 @@ class _infoEventState extends State<infoEventPage> {
                                 builder: (context) => eventsMainPage()));
                       },
                       child: Text(
-                        'Back',
+                        'Назад',
                         style: GoogleFonts.openSans(
                             fontSize: 21,
                             fontWeight: FontWeight.w700,
@@ -57,7 +57,7 @@ class _infoEventState extends State<infoEventPage> {
                       ),
                     ),
                     Text(
-                      'Go to the cafe',
+                      'Встреча в кафе',
                       style: GoogleFonts.openSans(
                           fontSize: 21,
                           fontWeight: FontWeight.w700,
@@ -72,7 +72,7 @@ class _infoEventState extends State<infoEventPage> {
                                 builder: (context) => eventsMainPage()));
                       },
                       child: Text(
-                        'Done',
+                        'Готово',
                         style: GoogleFonts.openSans(
                             fontSize: 21,
                             fontWeight: FontWeight.w700,
@@ -117,7 +117,7 @@ class _infoEventState extends State<infoEventPage> {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 17, top: 24),
-                          child: Text('Go to the cafe',
+                          child: Text('Кафе',
                               style: GoogleFonts.manrope(
                                   fontSize: 17,
                                   fontWeight: FontWeight.w800,
@@ -128,7 +128,7 @@ class _infoEventState extends State<infoEventPage> {
                           padding: const EdgeInsets.only(top: 5, left: 17),
                           child: Row(
                             children: [
-                              Text('16:00 - 5st december' + '     3',
+                              Text('16:00 - 5 декабря' + '     3',
                                   style: GoogleFonts.manrope(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w600,
@@ -163,7 +163,7 @@ class _infoEventState extends State<infoEventPage> {
                               height: 700,
                               child: Padding(
                                 padding: const EdgeInsets.only(
-                                    top: 30, left: 13, right: 20),
+                                    top: 30, left: 20, right: 20),
                                 child: Column(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -179,7 +179,7 @@ class _infoEventState extends State<infoEventPage> {
                                             );
                                           },
                                           child: Text(
-                                            'Back',
+                                            'Назад',
                                             style: GoogleFonts.openSans(
                                                 fontSize: 21,
                                                 fontWeight: FontWeight.w700,
@@ -188,7 +188,7 @@ class _infoEventState extends State<infoEventPage> {
                                           ),
                                         ),
                                         Text(
-                                          'Invite members',
+                                          'Приглашение',
                                           style: GoogleFonts.openSans(
                                               fontSize: 21,
                                               fontWeight: FontWeight.w700,
@@ -202,7 +202,7 @@ class _infoEventState extends State<infoEventPage> {
                                             );
                                           },
                                           child: Text(
-                                            'Done',
+                                            'Готово',
                                             style: GoogleFonts.openSans(
                                                 fontSize: 21,
                                                 fontWeight: FontWeight.w700,
@@ -291,7 +291,7 @@ class _infoEventState extends State<infoEventPage> {
                       child: Row(
                         children: [
                           Text(
-                            'Invite members   ',
+                            'Пригласить участников   ',
                             style: GoogleFonts.manrope(
                                 fontSize: 23,
                                 fontWeight: FontWeight.w800,

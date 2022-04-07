@@ -1,5 +1,7 @@
 import 'dart:ui';
+import 'package:diplom/CreateEvent/newEvent.dart';
 import 'package:diplom/Events/eventsMain.dart';
+import 'package:diplom/Notifications/chooseDate.dart';
 import 'package:diplom/Settings/eventsSettings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
@@ -33,7 +35,7 @@ class _eventsNotificationsState extends State<eventsNotificationsPage> {
                       height: 41,
                     ),
                     Text(
-                      'Notifications',
+                      'Уведомления',
                       style: GoogleFonts.manrope(
                           fontSize: 34,
                           fontWeight: FontWeight.w800,
@@ -85,26 +87,13 @@ class _eventsNotificationsState extends State<eventsNotificationsPage> {
                         Padding(
                           padding: const EdgeInsets.only(left: 8),
                           child: Text(
-                            'You were invited to the meeting (theatre)', style: GoogleFonts.openSans(
+                            'Вы были приглашены на встречу (театр)', style: GoogleFonts.openSans(
                               fontSize: 15,
                               fontWeight: FontWeight.w700,
                               letterSpacing: -0.3)),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 4, left: 8),
-                          child: Row(
-                            children: [
-                              Text(
-                                '16:00 - 5st december' + '     3', style: GoogleFonts.openSans(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w600,
-                                  letterSpacing: -0.3)),
-                              Icon(Icons.person, size: 16,),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10),
+                          padding: const EdgeInsets.only(top: 25),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
@@ -113,11 +102,18 @@ class _eventsNotificationsState extends State<eventsNotificationsPage> {
                                     primary: Color(0xFFF1F1F1),
                                     fixedSize: Size(174, 48),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              chooseDatePage(),
+                                        ));
+                                  },
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Text('Accept',
+                                      Text('Принять',
                                           style: GoogleFonts.openSans(
                                               color: Color(0xFF444444),
                                               fontSize: 16,
@@ -135,7 +131,7 @@ class _eventsNotificationsState extends State<eventsNotificationsPage> {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text('Refuse',
+                                    Text('Отлонить',
                                         style: GoogleFonts.openSans(
                                             color: Color(0xFF444444),
                                             fontSize: 16,
@@ -205,7 +201,14 @@ class _eventsNotificationsState extends State<eventsNotificationsPage> {
                                         ],
                                       )),
                                   child: IconButton(
-                                      onPressed: () => {},
+                                      onPressed: () => {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  newEventPage(),
+                                            ))
+                                      },
                                       icon: Icon(Icons.add),
                                       color: Colors.white),
                                 ),

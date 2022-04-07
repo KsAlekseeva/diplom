@@ -39,10 +39,10 @@ class _newNumberState extends State<newNumberPage> {
                       },
                     ),
                     Text(
-                      'New phone number',
+                      'Новый номер телефона',
                       style: GoogleFonts.manrope(
                           fontSize: 21,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w700,
                           letterSpacing: -0.7),
                     ),
                   ],

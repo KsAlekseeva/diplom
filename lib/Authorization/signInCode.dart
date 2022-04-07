@@ -46,10 +46,10 @@ class _SignInCodeState extends State<SignInCode> {
                       },
                     ),
                     Text(
-                      'Sign in',
+                      'Авторизация',
                       style: GoogleFonts.manrope(
                           fontSize: 34,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w700,
                           letterSpacing: -0.7),
                     ),
                   ],
@@ -63,7 +63,7 @@ class _SignInCodeState extends State<SignInCode> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          'SMS code',
+                          'SMS код',
                           textAlign: TextAlign.end,
                           style: GoogleFonts.sourceSansPro(
                               color: Colors.black,

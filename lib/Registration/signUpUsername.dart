@@ -35,10 +35,10 @@ class _SignUpUsernameState extends State<SignUpUsername> {
                       },
                     ),
                     Text(
-                      'Sign up',
+                      'Регистрация',
                       style: GoogleFonts.manrope(
                           fontSize: 34,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w700,
                           letterSpacing: -0.7),
                     ),
                   ],
@@ -52,7 +52,7 @@ class _SignUpUsernameState extends State<SignUpUsername> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          'Username',
+                          'Имя пользователя',
                           textAlign: TextAlign.end,
                           style: GoogleFonts.sourceSansPro(
                               color: Colors.black,
@@ -75,7 +75,7 @@ class _SignUpUsernameState extends State<SignUpUsername> {
                                   Flexible(
                                     child: CupertinoTextField(
                                       controller: controller,
-                                      placeholder: "Enter your username",
+                                      placeholder: "Введите имя пользователя",
                                       keyboardType: TextInputType.name,
                                       maxLength: 100,
                                       suffixMode: OverlayVisibilityMode.editing,

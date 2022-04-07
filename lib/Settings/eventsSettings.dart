@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:diplom/CreateEvent/newEvent.dart';
 import 'package:diplom/Events/eventsMain.dart';
 import 'package:diplom/Notifications/eventsNotifications.dart';
 import 'package:diplom/Profile/eventsProfile.dart';
@@ -33,7 +34,7 @@ class _eventsSettingsState extends State<eventsSettingsPage> {
                       height: 41,
                     ),
                     Text(
-                      'Settings',
+                      'Настройки',
                       style: GoogleFonts.manrope(
                           fontSize: 34,
                           fontWeight: FontWeight.w800,
@@ -59,7 +60,7 @@ class _eventsSettingsState extends State<eventsSettingsPage> {
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
                           child: Text(
-                            'Change phone number',
+                            'Изменить номер телефона',
                             style: GoogleFonts.manrope(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w800,
@@ -108,12 +109,12 @@ class _eventsSettingsState extends State<eventsSettingsPage> {
                         showDialog<String>(
                           context: context,
                           builder: (BuildContext context) => CupertinoAlertDialog(
-                            title: const Text('Are you sure you want to delete your account?', style: TextStyle(color: Colors.black, fontSize: 20),),
-                            content: const Text('Your account, all friends \nand statistics will be deleted', style: TextStyle(color: Colors.black, fontSize: 15),),
+                            title: const Text('Вы уверены, что хотите удалить аккаунт?', style: TextStyle(color: Colors.black, fontSize: 20),),
+                            content: const Text('Ваш аккаунт, все друзья \nи статистика будут удалены', style: TextStyle(color: Colors.black, fontSize: 15),),
                             actions: <Widget>[
                               TextButton(
                                 onPressed: () => Navigator.pop(context, 'Refuse'),
-                                child: const Text('Refuse', style: TextStyle(color: Colors.black, fontSize: 16)),
+                                child: const Text('Отклонить', style: TextStyle(color: Colors.black, fontSize: 16)),
                               ),
                               TextButton(
                                 onPressed: () =>Navigator.push(
@@ -122,14 +123,14 @@ class _eventsSettingsState extends State<eventsSettingsPage> {
                                       builder: (context) =>
                                           MyHomePage(title: ''),
                                     )), 
-                                child: const Text('Accept', style: TextStyle(color: Colors.black, fontSize: 16)),
+                                child: const Text('Принять', style: TextStyle(color: Colors.black, fontSize: 16)),
                               ),
                             ],
                           ),
                         ),
                       },
                       child: Text(
-                        'Delete account',
+                        'Удалить аккаунт',
                         style: GoogleFonts.manrope(
                           fontSize: 20,
                           fontWeight: FontWeight.w700,
@@ -199,7 +200,14 @@ class _eventsSettingsState extends State<eventsSettingsPage> {
                                         ],
                                       )),
                                   child: IconButton(
-                                      onPressed: () => {},
+                                      onPressed: () => {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  newEventPage(),
+                                            ))
+                                      },
                                       icon: Icon(Icons.add),
                                       color: Colors.white),
                                 ),

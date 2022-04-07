@@ -44,10 +44,10 @@ class _verifyNumberState extends State<verifyNumberPage> {
                       },
                     ),
                     Text(
-                      'Verify phone number',
+                      'Проверка номера телефона',
                       style: GoogleFonts.manrope(
                           fontSize: 21,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w700,
                           letterSpacing: -0.7),
                     ),
                   ],
@@ -61,7 +61,7 @@ class _verifyNumberState extends State<verifyNumberPage> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          'SMS code',
+                          'SMS код',
                           textAlign: TextAlign.end,
                           style: GoogleFonts.sourceSansPro(
                               color: Colors.black,

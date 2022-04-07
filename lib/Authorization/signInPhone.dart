@@ -36,10 +36,10 @@ class _SignInPhoneState extends State<SignInPhone> {
                       },
                     ),
                     Text(
-                      'Sign in',
+                      'Авторизация',
                       style: GoogleFonts.manrope(
                           fontSize: 34,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w700,
                           letterSpacing: -0.7),
                     ),
                   ],
@@ -53,7 +53,7 @@ class _SignInPhoneState extends State<SignInPhone> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          'Phone number',
+                          'Номер телефона',
                           textAlign: TextAlign.end,
                           style: GoogleFonts.sourceSansPro(
                               color: Colors.black,
@@ -76,7 +76,7 @@ class _SignInPhoneState extends State<SignInPhone> {
                                   Flexible(
                                     child: CupertinoTextField(
                                       controller: controller,
-                                      placeholder: "Enter your phone number",
+                                      placeholder: "Введите номер телефона",
                                       keyboardType: TextInputType.phone,
                                       autocorrect: false,
                                       maxLength: 18,

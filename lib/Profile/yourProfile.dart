@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:diplom/Events/eventsMain.dart';
 import 'package:diplom/Notifications/eventsNotifications.dart';
 import 'package:diplom/Profile/eventsProfile.dart';
+import 'package:diplom/Profile/newPhoto.dart';
 import 'package:diplom/Settings/eventsSettings.dart';
 import 'package:diplom/Profile/newUsername.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,7 @@ class _yourProfileState extends State<yourProfilePage> {
                             ));
                       },
                       child: Text(
-                        'Back',
+                        'Назад',
                         style: GoogleFonts.openSans(
                             fontSize: 21,
                             fontWeight: FontWeight.w700,
@@ -49,7 +50,7 @@ class _yourProfileState extends State<yourProfilePage> {
                       ),
                     ),
                     Text(
-                      'Your Profile',
+                      'Ваш профиль',
                       style: GoogleFonts.openSans(
                           fontSize: 21,
                           fontWeight: FontWeight.w700,
@@ -66,7 +67,7 @@ class _yourProfileState extends State<yourProfilePage> {
                             ));
                       },
                       child: Text(
-                        'Done',
+                        'Готово',
                         style: GoogleFonts.openSans(
                             fontSize: 21,
                             fontWeight: FontWeight.w700,
@@ -152,7 +153,7 @@ class _yourProfileState extends State<yourProfilePage> {
                                   Padding(
                                     padding: const EdgeInsets.only(left: 15),
                                     child: Text(
-                                      'Change your photo',
+                                      'Изменить фото',
                                       style: GoogleFonts.manrope(
                                           fontSize: 20,
                                           fontWeight: FontWeight.w800,
@@ -164,7 +165,12 @@ class _yourProfileState extends State<yourProfilePage> {
                                     icon: Icon(Icons.arrow_forward_ios),
                                     color: Color(0xFF8B41B9),
                                     iconSize: 22,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(context,
+                                      MaterialPageRoute(
+                                      builder: (context) => newPhotoPage(),
+                                      ));
+                                    },
                                   )
                                 ],
                               ),
@@ -192,7 +198,7 @@ class _yourProfileState extends State<yourProfilePage> {
                                   Padding(
                                     padding: const EdgeInsets.only(left: 15),
                                     child: Text(
-                                      'Change your username',
+                                      'Изменить имя пользователя',
                                       style: GoogleFonts.manrope(
                                           fontSize: 20,
                                           fontWeight: FontWeight.w800,

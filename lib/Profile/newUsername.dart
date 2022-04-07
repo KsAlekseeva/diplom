@@ -35,7 +35,7 @@ class _newUsernameState extends State<newUsernamePage> {
                       },
                     ),
                     Text(
-                      'New username',
+                      'Новое имя пользователя',
                       style: GoogleFonts.manrope(
                           fontSize: 21,
                           fontWeight: FontWeight.w800,

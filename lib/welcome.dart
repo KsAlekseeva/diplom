@@ -69,14 +69,19 @@ class _MyHomePageState extends State<MyHomePage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Text(
-                                'Welcome to your \n     meeting app!',
-                                textDirection: TextDirection.ltr,
-                                style: GoogleFonts.manrope(
-                                    fontSize: 34,
-                                    fontWeight: FontWeight.w800,
-                                    letterSpacing: -0.7),
+                              Row(
+                                children: [
+                                  Text(
+                                    'Добро пожаловать!',
+                                    style: GoogleFonts.manrope(
+                                        fontSize: 32,
+                                        fontWeight: FontWeight.w700,
+                                        letterSpacing: -0.7),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -102,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       MaterialPageRoute(builder: (context) =>
                                           SignInPhone(),
                                       ));},
-                                  child: Text('Sign in',
+                                  child: Text('Авторизация',
                                       style: GoogleFonts.manrope(
                                           color: Color(0xFF444444),
                                           fontSize: 25,
@@ -133,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 SignUpPhone(),
                                                 ));
                                   },
-                                  child: Text('Sign up',
+                                  child: Text('Регистрация',
                                       style: GoogleFonts.manrope(
                                           color: Colors.white,
                                           fontSize: 25,
@@ -143,31 +148,34 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ],
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                child: Divider(color: Colors.black),
-                                width: 90,
-                              ),
-                              const SizedBox(
-                                width: 50,
-                              ),
-                              Text(
-                                  'or',
-                                  style: GoogleFonts.manrope(
-                                    color: Color(0xFF444444),
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w800,
-                                  )),
-                              const SizedBox(
-                                width: 50,
-                              ),
-                              const SizedBox(
-                                child: Divider(color: Colors.black),
-                                width: 90,
-                              ),
-                            ],
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const SizedBox(
+                                  child: Divider(color: Colors.black),
+                                  width: 90,
+                                ),
+                                const SizedBox(
+                                  width: 50,
+                                ),
+                                Text(
+                                    'или',
+                                    style: GoogleFonts.manrope(
+                                      color: Color(0xFF444444),
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w800,
+                                    )),
+                                const SizedBox(
+                                  width: 50,
+                                ),
+                                const SizedBox(
+                                  child: Divider(color: Colors.black),
+                                  width: 90,
+                                ),
+                              ],
+                            ),
                           ),
                           Column(
                             children: [
@@ -197,7 +205,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       const SizedBox(
                                         width: 10,
                                       ),
-                                      Text('Sign in with Google',
+                                      Text('Войти с помощью Google',
                                           style: GoogleFonts.manrope(
                                               color: Color(0xFF444444),
                                               fontSize: 20,

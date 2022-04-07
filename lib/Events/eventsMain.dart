@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:diplom/CreateEvent/newEvent.dart';
 import 'package:diplom/Notifications/eventsNotifications.dart';
 import 'package:diplom/Profile/eventsProfile.dart';
 import 'package:diplom/Settings/eventsSettings.dart';
@@ -34,7 +35,7 @@ class _eventsMainState extends State<eventsMainPage> {
                       height: 41,
                     ),
                     Text(
-                      'Events',
+                      'Встречи',
                       style: GoogleFonts.manrope(
                           fontSize: 34,
                           fontWeight: FontWeight.w800,
@@ -42,7 +43,7 @@ class _eventsMainState extends State<eventsMainPage> {
                           color: Color(0xFF444444)),
                     ),
                     SizedBox(
-                      width: 207,
+                      width: 190,
                       height: 41,
                     ),
                     Padding(
@@ -81,7 +82,7 @@ class _eventsMainState extends State<eventsMainPage> {
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             primary: Colors.white,
-                            fixedSize: Size(107, 44),
+                            fixedSize: Size(190, 44),
                             shape: const RoundedRectangleBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)),
@@ -129,11 +130,10 @@ class _eventsMainState extends State<eventsMainPage> {
                                                 CrossAxisAlignment.center,
                                             children: [
                                               Text(
-                                                'Count of members',
+                                                'Количество участников',
                                                 style: GoogleFonts.openSans(
                                                     fontSize: 21,
                                                     fontWeight: FontWeight.w700,
-                                                    letterSpacing: -0.7,
                                                     color: Colors.black),
                                               ),
                                               const Icon(
@@ -158,11 +158,10 @@ class _eventsMainState extends State<eventsMainPage> {
                                               CrossAxisAlignment.center,
                                           children: [
                                             Text(
-                                              'Date',
+                                              'Дата',
                                               style: GoogleFonts.openSans(
                                                   fontSize: 21,
                                                   fontWeight: FontWeight.w700,
-                                                  letterSpacing: -0.7,
                                                   color: Colors.black),
                                             ),
                                             const Icon(Icons.sort_rounded,
@@ -181,7 +180,7 @@ class _eventsMainState extends State<eventsMainPage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('Sort',
+                              Text('Сортировка',
                                   style: GoogleFonts.manrope(
                                       color: Color(0xFF444444),
                                       fontSize: 21,
@@ -203,18 +202,156 @@ class _eventsMainState extends State<eventsMainPage> {
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               primary: Colors.white,
-                              fixedSize: Size(119, 44),
+                              fixedSize: Size(135, 44),
                               shape: const RoundedRectangleBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10)),
                                 side: BorderSide(color: Colors.black),
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              showModalBottomSheet(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(12),
+                                        topRight: Radius.circular(12))),
+                                //for the round edges
+                                builder: (context) {
+                                  return Container(
+                                    height: 320,
+                                    child: Column(children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          const Padding(
+                                              padding:
+                                                  EdgeInsets.only(top: 24)),
+                                          Container(
+                                            height: 4,
+                                            width: 76,
+                                            decoration: const BoxDecoration(
+                                                color: Colors.black,
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(30))),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.center,
+                                        children: [
+                                          Text('Количество участников:', style:GoogleFonts.openSans(
+                                              fontSize: 21,
+                                              fontWeight:
+                                              FontWeight.w700,
+                                              color: Colors.black),),
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 10),
+                                        child: Container(
+                                          height: 50,
+                                          width: 360,
+                                          child: TextButton(
+                                            onPressed: () {},
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  'Меньше 5',
+                                                  style: GoogleFonts.openSans(
+                                                      fontSize: 21,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color: Colors.black),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        height: 50,
+                                        width: 360,
+                                        child: TextButton(
+                                          onPressed: () {},
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                'От 5 до 15',
+                                                style: GoogleFonts.openSans(
+                                                    fontSize: 21,
+                                                    fontWeight: FontWeight.w700,
+                                                    color: Colors.black),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        height: 50,
+                                        width: 360,
+                                        child: TextButton(
+                                          onPressed: () {},
+                                          child: Row(
+                                            mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                'от 15 до 30',
+                                                style: GoogleFonts.openSans(
+                                                    fontSize: 21,
+                                                    fontWeight: FontWeight.w700,
+                                                    color: Colors.black),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        height: 50,
+                                        width: 360,
+                                        child: TextButton(
+                                          onPressed: () {},
+                                          child: Row(
+                                            mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                'Больше 30',
+                                                style: GoogleFonts.openSans(
+                                                    fontSize: 21,
+                                                    fontWeight: FontWeight.w700,
+                                                    color: Colors.black),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ]),
+                                  );
+                                },
+                                context: context,
+                                isDismissible: false,
+                              );
+                            },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text('Filters',
+                                Text('Фильтр',
                                     style: GoogleFonts.manrope(
                                         color: Color(0xFF444444),
                                         fontSize: 20,
@@ -253,8 +390,7 @@ class _eventsMainState extends State<eventsMainPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) =>
-                                          infoEventPage(),
+                                      builder: (context) => infoEventPage(),
                                     ));
                               },
                               child: Row(
@@ -263,15 +399,18 @@ class _eventsMainState extends State<eventsMainPage> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsets.only(left: 8, top: 30),
-                                        child: Text('Go to the cafe',
+                                        padding: const EdgeInsets.only(
+                                            left: 8, top: 30),
+                                        child: Text('Кафе ',
                                             style: GoogleFonts.manrope(
                                                 fontSize: 17,
                                                 fontWeight: FontWeight.w800,
-                                                letterSpacing: -0.3, color: Colors.black)),
+                                                letterSpacing: -0.3,
+                                                color: Colors.black)),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(
@@ -279,15 +418,17 @@ class _eventsMainState extends State<eventsMainPage> {
                                         child: Row(
                                           children: [
                                             Text(
-                                                '16:00 - 5st december' +
+                                                '16:00 - 5 декабря' +
                                                     '     3',
                                                 style: GoogleFonts.manrope(
                                                     fontSize: 13,
                                                     fontWeight: FontWeight.w600,
-                                                    letterSpacing: -0.3, color: Colors.black)),
+                                                    letterSpacing: -0.3,
+                                                    color: Colors.black)),
                                             Icon(
                                               Icons.person,
-                                              size: 16,color: Colors.black,
+                                              size: 16,
+                                              color: Colors.black,
                                             ),
                                           ],
                                         ),
@@ -312,31 +453,34 @@ class _eventsMainState extends State<eventsMainPage> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsets.only(left: 8, top: 30),
-                                        child: Text('Go to the cinema',
+                                        padding: const EdgeInsets.only(
+                                            left: 8, top: 30),
+                                        child: Text('Кино',
                                             style: GoogleFonts.manrope(
                                                 fontSize: 17,
                                                 fontWeight: FontWeight.w800,
-                                                letterSpacing: -0.3, color: Colors.black)),
+                                                letterSpacing: -0.3,
+                                                color: Colors.black)),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(
                                             top: 4, left: 8),
                                         child: Row(
                                           children: [
-                                            Text(
-                                                '5st december' +
-                                                    '     3',
+                                            Text('5 декабря' + '     3',
                                                 style: GoogleFonts.manrope(
                                                     fontSize: 13,
                                                     fontWeight: FontWeight.w600,
-                                                    letterSpacing: -0.3, color: Colors.black)),
+                                                    letterSpacing: -0.3,
+                                                    color: Colors.black)),
                                             Icon(
                                               Icons.person,
-                                              size: 16,color: Colors.black,
+                                              size: 16,
+                                              color: Colors.black,
                                             ),
                                           ],
                                         ),
@@ -368,15 +512,18 @@ class _eventsMainState extends State<eventsMainPage> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.only(left: 8, top: 30),
-                                          child: Text('Go to the theatre',
+                                          padding: const EdgeInsets.only(
+                                              left: 8, top: 30),
+                                          child: Text('Театр',
                                               style: GoogleFonts.manrope(
                                                   fontSize: 17,
                                                   fontWeight: FontWeight.w800,
-                                                  letterSpacing: -0.3, color: Colors.black)),
+                                                  letterSpacing: -0.3,
+                                                  color: Colors.black)),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.only(
@@ -384,15 +531,18 @@ class _eventsMainState extends State<eventsMainPage> {
                                           child: Row(
                                             children: [
                                               Text(
-                                                  '16:00 - 5st december' +
+                                                  '16:00 - 5 декабря' +
                                                       '     3',
                                                   style: GoogleFonts.manrope(
                                                       fontSize: 13,
-                                                      fontWeight: FontWeight.w600,
-                                                      letterSpacing: -0.3, color: Colors.black)),
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      letterSpacing: -0.3,
+                                                      color: Colors.black)),
                                               Icon(
                                                 Icons.person,
-                                                size: 16,color: Colors.black,
+                                                size: 16,
+                                                color: Colors.black,
                                               ),
                                             ],
                                           ),
@@ -425,31 +575,35 @@ class _eventsMainState extends State<eventsMainPage> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.only(left: 8, top: 30),
-                                          child: Text('Go to the cowork',
+                                          padding: const EdgeInsets.only(
+                                              left: 8, top: 30),
+                                          child: Text('Коворкинг',
                                               style: GoogleFonts.manrope(
                                                   fontSize: 17,
                                                   fontWeight: FontWeight.w800,
-                                                  letterSpacing: -0.3, color: Colors.black)),
+                                                  letterSpacing: -0.3,
+                                                  color: Colors.black)),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.only(
                                               top: 4, left: 8),
                                           child: Row(
                                             children: [
-                                              Text(
-                                                  '5st december' +
-                                                      '     3',
+                                              Text('5 декабря' + '     3',
                                                   style: GoogleFonts.manrope(
                                                       fontSize: 13,
-                                                      fontWeight: FontWeight.w600,
-                                                      letterSpacing: -0.3, color: Colors.black)),
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      letterSpacing: -0.3,
+                                                      color: Colors.black)),
                                               Icon(
                                                 Icons.person,
-                                                size: 16,color: Colors.black,
+                                                size: 16,
+                                                color: Colors.black,
                                               ),
                                             ],
                                           ),
@@ -474,15 +628,18 @@ class _eventsMainState extends State<eventsMainPage> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.only(left: 8, top: 30),
-                                          child: Text('Go to the restaurant',
+                                          padding: const EdgeInsets.only(
+                                              left: 8, top: 30),
+                                          child: Text('Ресторан',
                                               style: GoogleFonts.manrope(
                                                   fontSize: 17,
                                                   fontWeight: FontWeight.w800,
-                                                  letterSpacing: -0.3, color: Colors.black)),
+                                                  letterSpacing: -0.3,
+                                                  color: Colors.black)),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.only(
@@ -490,15 +647,18 @@ class _eventsMainState extends State<eventsMainPage> {
                                           child: Row(
                                             children: [
                                               Text(
-                                                  '16:00 - 5st december' +
+                                                  '16:00 - 5 декабря' +
                                                       '     3',
                                                   style: GoogleFonts.manrope(
                                                       fontSize: 13,
-                                                      fontWeight: FontWeight.w600,
-                                                      letterSpacing: -0.3, color: Colors.black)),
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      letterSpacing: -0.3,
+                                                      color: Colors.black)),
                                               Icon(
                                                 Icons.person,
-                                                size: 16,color: Colors.black,
+                                                size: 16,
+                                                color: Colors.black,
                                               ),
                                             ],
                                           ),
@@ -568,7 +728,14 @@ class _eventsMainState extends State<eventsMainPage> {
                                         ],
                                       )),
                                   child: IconButton(
-                                      onPressed: () => {},
+                                      onPressed: () => {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  newEventPage(),
+                                            ))
+                                      },
                                       icon: Icon(Icons.add),
                                       color: Colors.white),
                                 ),
