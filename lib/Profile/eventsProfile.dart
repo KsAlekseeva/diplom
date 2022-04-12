@@ -3,7 +3,7 @@ import 'package:diplom/CreateEvent/newEvent.dart';
 import 'package:diplom/Events/eventsMain.dart';
 import 'package:diplom/Notifications/eventsNotifications.dart';
 import 'package:diplom/Settings/eventsSettings.dart';
-import 'package:diplom/welcome.dart';
+import 'package:diplom/main.dart';
 import 'package:diplom/Profile/yourProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';

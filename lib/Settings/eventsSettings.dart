@@ -4,7 +4,7 @@ import 'package:diplom/Events/eventsMain.dart';
 import 'package:diplom/Notifications/eventsNotifications.dart';
 import 'package:diplom/Profile/eventsProfile.dart';
 import 'package:diplom/Settings/newNumber.dart';
-import 'package:diplom/welcome.dart';
+import 'package:diplom/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:google_fonts/google_fonts.dart';
