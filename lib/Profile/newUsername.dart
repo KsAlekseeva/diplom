@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'eventsProfile.dart';
+
 class newUsernamePage extends StatefulWidget {
   const newUsernamePage({Key? key}) : super(key: key);
 
@@ -61,7 +63,7 @@ class _newUsernameState extends State<newUsernamePage> {
                                   Flexible(
                                     child: CupertinoTextField(
                                       controller: controller,
-                                      placeholder: "Oksana Alekseeva",
+                                      placeholder: username,
                                       keyboardType: TextInputType.name,
                                       maxLength: 100,
                                       suffixMode: OverlayVisibilityMode.editing,
@@ -94,6 +96,7 @@ class _newUsernameState extends State<newUsernamePage> {
                                     icon: Icon(Icons.arrow_forward),
                                     color: Color(0xFF8B41B9),
                                     onPressed: _isDisabled ? null : () {
+                                      username = controller.text;
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(

@@ -15,8 +15,6 @@ class chooseDatePage extends StatefulWidget {
   State<chooseDatePage> createState() => _chooseDateState();
 }
 List listdate = [
-  DateforAdd(adddate: '2020-13-04', timefrom: '16:00', timeto: '18:00'),
-  DateforAdd(adddate: '2020-13-04', timefrom: '16:00', timeto: '18:00')
 ];
 
 class _chooseDateState extends State<chooseDatePage> {

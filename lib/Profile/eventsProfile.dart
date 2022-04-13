@@ -16,6 +16,7 @@ class eventsProfilePage extends StatefulWidget {
   @override
   State<eventsProfilePage> createState() => _eventsProfileState();
 }
+String username = 'Oksana Alekseeva';
 
 class _eventsProfileState extends State<eventsProfilePage> {
 
@@ -78,7 +79,7 @@ class _eventsProfileState extends State<eventsProfilePage> {
                                 Row(
                                   children: [
                                     Text(
-                                      'Oksana Alekseeva',
+                                      username.toString(),
                                       style: GoogleFonts.openSans(
                                           fontSize: 21,
                                           fontWeight: FontWeight.w700,

@@ -111,7 +111,7 @@ class _yourProfileState extends State<yourProfilePage> {
                                 Row(
                                   children: [
                                     Text(
-                                      'Oksana Alekseeva',
+                                      username,
                                       style: GoogleFonts.openSans(
                                           fontSize: 21,
                                           fontWeight: FontWeight.w700,

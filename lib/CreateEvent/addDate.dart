@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:diplom/Notifications/chooseDate.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:time_pickerr/time_pickerr.dart';
@@ -16,6 +17,9 @@ class addDatePage extends StatefulWidget {
   State<addDatePage> createState() => _addDateState();
 }
 
+String timefrom = '';
+String timeto = '';
+String date = '';
 class _addDateState extends State<addDatePage> {
   var controller = TextEditingController();
   DateTime _focusedDay = DateTime.now();
@@ -25,6 +29,7 @@ class _addDateState extends State<addDatePage> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -50,6 +55,7 @@ class _addDateState extends State<addDatePage> {
                     ),
                     TextButton(
                       onPressed: () {
+                        listdate.add(DateforAdd(month: _selectedDay!.month.toString(), day: _selectedDay!.day.toString(),  year: _selectedDay!.year.toString(), timefrom: timefrom, timeto: timeto));
                         Navigator.pop(context);
                       },
                       child: Text(
@@ -68,6 +74,7 @@ class _addDateState extends State<addDatePage> {
                 padding: const EdgeInsets.only(left: 10, right: 10),
                 child: Column(
                   children: [
+
                     TableCalendar(
                       firstDay: DateTime.utc(2010, 10, 16),
                       lastDay: DateTime.utc(2030, 3, 14),
@@ -144,14 +151,14 @@ class _addDateState extends State<addDatePage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+                padding: const EdgeInsets.only(left: 60, right: 60, top: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('', style: TextStyle(fontSize: 20),),
+                        Text(timefrom.toString(), style: TextStyle(fontSize: 20),),
                         IconButton(onPressed: () => {
                           showDialog<String>(
                             context: context,
@@ -165,7 +172,7 @@ class _addDateState extends State<addDatePage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('', style: TextStyle(fontSize: 20),),
+                        Text(timeto.toString(), style: TextStyle(fontSize: 20),),
                         IconButton(onPressed: () => {
                           showDialog<String>(
                             context: context,
@@ -185,7 +192,6 @@ class _addDateState extends State<addDatePage> {
       ),
     );
   }
-
   void _onDaySelected(DateTime selectedDay, DateTime focusedDay) {
     if (!isSameDay(_selectedDay, selectedDay)) {
       setState(() {
@@ -269,6 +275,7 @@ buildCustomTimerFrom(BuildContext context) {
         color: Color(0xFF8B41B9)),
     elevation: 2,
     onPositivePressed: (context, time) {
+      timefrom = time.hour.toString()+ ':' + time.minute.toString();
       Navigator.pop(context);
     },
     onNegativePressed: (context) {
@@ -276,7 +283,6 @@ buildCustomTimerFrom(BuildContext context) {
     },
   );
 }
-
 buildCustomTimerTo(BuildContext context) {
   return CustomHourPicker(
     titleStyle: TextStyle(fontSize: 20,
@@ -293,6 +299,7 @@ buildCustomTimerTo(BuildContext context) {
         color: Color(0xFF8B41B9)),
     elevation: 2,
     onPositivePressed: (context, time) {
+      timeto = time.hour.toString()+ ':' + time.minute.toString();
       Navigator.pop(context);
     },
     onNegativePressed: (context) {

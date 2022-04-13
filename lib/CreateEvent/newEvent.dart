@@ -27,11 +27,7 @@ List list = [
 
 class _newEventState extends State<newEventPage> {
   var controller = TextEditingController();
-  List listdate = [
-    DateforAdd(adddate: '2020-13-04', timefrom: '16:00', timeto: '18:00'),
-    DateforAdd(adddate: '2020-13-04', timefrom: '16:00', timeto: '18:00')
-  ];
-
+  List listdate = <DateforAdd>[];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -153,7 +149,7 @@ class _newEventState extends State<newEventPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                listdate[index].adddate +
+                                listdate[index].day+listdate[index].month+listdate[index].year+
                                     ' с ' +
                                     listdate[index].timefrom +
                                     ' до ' +
@@ -389,10 +385,12 @@ class _newEventState extends State<newEventPage> {
 }
 
 class DateforAdd {
-  var adddate = '';
-  var timefrom = '';
-  var timeto = '';
+  String month = '';
+  String day = '';
+  String year = '';
+  String timefrom = '';
+  String timeto = '';
 
   DateforAdd(
-      {required this.adddate, required this.timefrom, required this.timeto});
+      {required this.month, required this.day, required this.year, required this.timefrom, required this.timeto});
 }
