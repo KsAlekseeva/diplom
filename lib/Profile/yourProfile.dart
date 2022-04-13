@@ -123,7 +123,7 @@ class _yourProfileState extends State<yourProfilePage> {
                                 Row(
                                   children: [
                                     Text(
-                                      '+7 (911) 385-32-32',
+                                      '+7 (981) 153-35-70',
                                       style: GoogleFonts.openSans(
                                           fontSize: 15,
                                           fontWeight: FontWeight.w600,

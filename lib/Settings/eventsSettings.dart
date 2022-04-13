@@ -100,7 +100,7 @@ class _eventsSettingsState extends State<eventsSettingsPage> {
                       style: ElevatedButton.styleFrom(
                         alignment: Alignment.centerLeft,
                         primary: Color(0xFFF5F5F5),
-                        fixedSize: Size(380, 65),
+                        fixedSize: Size(370, 65),
                         shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),

@@ -418,8 +418,8 @@ class _eventsMainState extends State<eventsMainPage> {
                                         child: Row(
                                           children: [
                                             Text(
-                                                '16:00 - 5 декабря' +
-                                                    '     3',
+                                                '15:00 - 25 апреля' +
+                                                    '     1',
                                                 style: GoogleFonts.manrope(
                                                     fontSize: 13,
                                                     fontWeight: FontWeight.w600,
@@ -471,7 +471,7 @@ class _eventsMainState extends State<eventsMainPage> {
                                             top: 4, left: 8),
                                         child: Row(
                                           children: [
-                                            Text('5 декабря' + '     3',
+                                            Text('' + '     0',
                                                 style: GoogleFonts.manrope(
                                                     fontSize: 13,
                                                     fontWeight: FontWeight.w600,
@@ -531,8 +531,8 @@ class _eventsMainState extends State<eventsMainPage> {
                                           child: Row(
                                             children: [
                                               Text(
-                                                  '16:00 - 5 декабря' +
-                                                      '     3',
+                                                  '' +
+                                                      '     0',
                                                   style: GoogleFonts.manrope(
                                                       fontSize: 13,
                                                       fontWeight:
@@ -593,7 +593,7 @@ class _eventsMainState extends State<eventsMainPage> {
                                               top: 4, left: 8),
                                           child: Row(
                                             children: [
-                                              Text('5 декабря' + '     3',
+                                              Text('' + '     0',
                                                   style: GoogleFonts.manrope(
                                                       fontSize: 13,
                                                       fontWeight:
@@ -615,61 +615,6 @@ class _eventsMainState extends State<eventsMainPage> {
                               ),
                             ),
                             style: NeumorphicStyle(color: Color(0xFFF4D3FF)),
-                          ),
-                          Neumorphic(
-                            child: Container(
-                              height: 100,
-                              width: 200,
-                              child: TextButton(
-                                onPressed: () {},
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 8, top: 30),
-                                          child: Text('Ресторан',
-                                              style: GoogleFonts.manrope(
-                                                  fontSize: 17,
-                                                  fontWeight: FontWeight.w800,
-                                                  letterSpacing: -0.3,
-                                                  color: Colors.black)),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              top: 4, left: 8),
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                  '16:00 - 5 декабря' +
-                                                      '     3',
-                                                  style: GoogleFonts.manrope(
-                                                      fontSize: 13,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      letterSpacing: -0.3,
-                                                      color: Colors.black)),
-                                              Icon(
-                                                Icons.person,
-                                                size: 16,
-                                                color: Colors.black,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            style: NeumorphicStyle(color: Color(0xFFC1FFFB)),
                           ),
                         ],
                       ),

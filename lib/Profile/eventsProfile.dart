@@ -90,7 +90,7 @@ class _eventsProfileState extends State<eventsProfilePage> {
                                 Row(
                                   children: [
                                     Text(
-                                      '+7 (911) 385-32-32',
+                                      '+7 (981) 153-35-70',
                                       style: GoogleFonts.openSans(
                                         fontSize: 13,
                                         fontWeight: FontWeight.w600,
@@ -151,7 +151,7 @@ class _eventsProfileState extends State<eventsProfilePage> {
                       padding: const EdgeInsets.only(top: 8),
                       child: Row(
                         children: [
-                          Text('• 10 успешных встреч  \n• 5 друзей приглашены в приложение', style: GoogleFonts.manrope(
+                          Text('• 10 успешных встреч  \n• 1 друг приглашен в приложение', style: GoogleFonts.manrope(
                               fontSize: 18,
                               fontWeight: FontWeight.w600,
                               letterSpacing: -0.3,

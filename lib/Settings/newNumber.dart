@@ -65,7 +65,7 @@ class _newNumberState extends State<newNumberPage> {
                                   Flexible(
                                     child: CupertinoTextField(
                                       controller: controller,
-                                      placeholder: "+7 (911) 322-32-23",
+                                      placeholder: "+7 (981) 153-35-70",
                                       keyboardType: TextInputType.phone,
                                       autocorrect: false,
                                       maxLength: 18,

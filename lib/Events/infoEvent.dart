@@ -20,7 +20,7 @@ class Contacts {
   Contacts({required this.name, required this.check});
 }
 
-List list = [Contacts(name: 'Mikhailova Alevtina', check: false), Contacts(name: 'Username', check: true)];
+List list = [Contacts(name: 'Mikhailova Alevtina', check: false)];
 
 
 
@@ -86,37 +86,14 @@ class _infoEventState extends State<infoEventPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 16, top: 16, right: 16),
                 child: Container(
-                  height: 290,
+                  height: 100,
                   width: 370,
                   child: Neumorphic(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                                width: 327,
-                                height: 177,
-                                child: Swiper(
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return Image.asset(
-                                      "assets/cafe.png",
-                                      fit: BoxFit.fill,
-                                    );
-                                  },
-                                  itemCount: 1,
-                                  itemHeight: 100,
-                                  itemWidth: 100,
-                                  viewportFraction: 0.8,
-                                  scale: 0.9,
-                                )),
-                          ],
-                        ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 17, top: 24),
+                          padding: const EdgeInsets.only(left: 17, top: 10),
                           child: Text('Кафе',
                               style: GoogleFonts.manrope(
                                   fontSize: 17,
@@ -128,7 +105,7 @@ class _infoEventState extends State<infoEventPage> {
                           padding: const EdgeInsets.only(top: 5, left: 17),
                           child: Row(
                             children: [
-                              Text('16:00 - 5 декабря' + '     3',
+                              Text('15:00 - 25 апреля' + '     1',
                                   style: GoogleFonts.manrope(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w600,

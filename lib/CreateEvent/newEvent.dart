@@ -23,7 +23,6 @@ class Contacts {
 
 List list = [
   Contacts(name: 'Mikhailova Alevtina', check: false),
-  Contacts(name: 'Username', check: true)
 ];
 
 class _newEventState extends State<newEventPage> {
